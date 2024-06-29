@@ -1,16 +1,10 @@
-import React, { useState } from 'react'
-import Select from 'react-select'
-
+import React from 'react'
+import { useState } from 'react';
 
 export default function Component() {
 
     const [selectedValue, setSelectedValue] = useState('');
-    const options = [
-        { value: '13,23', label: 'Multiproposito Bovino Vitalim  40 Kg' },
-        { value: '7,28', label: 'Multiproposito Cerdos Vitalim 20 Kg' },
-        { value: '11,46', label: 'Multiproposito Convaca N15 35 Kg' },
-        { value: '13,24', label: 'Multiproposito Convaca N15 Plus 35 Kg' }
-    ];
+
     return (
         <div>
             <h2>Bienvenido a la Agropecuaria Los Gilgares</h2>
@@ -39,12 +33,17 @@ export default function Component() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><Select
+                                    <td><select
                                         value={selectedValue}
-                                        onChange={(selectedOption) => setSelectedValue(selectedOption.value)}
-                                        options={options}
-                                    /></td>
-                                    <td><input type="text" value={selectedValue} /></td>
+                                        onChange={e => setSelectedValue(e.target.value)}
+                                    >
+                                        <option value="13,23">Multiproposito Bovino Vitalim  40 Kg</option>
+                                        <option value="7,28">Multiproposito Cerdos Vitalim 20 Kg</option>
+                                        <option value="11,46">Multiproposito Convaca N15 35 Kg </option>
+                                        <option value="13,24">Multiproposito Convaca N15 Plus 35 Kg </option>
+                                    </select>
+                                    </td>
+                                    <td><input type="int" value={selectedValue} /></td>
                                     <td><input type="text" /></td>
                                     <td><input type="text" /></td>
                                     <td><input type="text" /></td>
