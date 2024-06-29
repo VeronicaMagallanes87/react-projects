@@ -3,7 +3,23 @@ import { useState } from 'react';
 
 export default function Component() {
 
-    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValue, setSelectedValue] = useState(0);
+    const options = [
+        { value: '13.23', label: 'Multiproposito Bovino Vitalim  40 Kg' },
+        { value: '7.28', label: 'Multiproposito Cerdos Vitalim 20 Kg' },
+        { value: '11.46', label: 'Multiproposito Convaca N15 35 Kg' },
+        { value: '13.24', label: 'Multiproposito Convaca N15 Plus 35 Kg' }
+    ];
+
+    const [num1, setNum1] = useState(0);
+
+    const handleNum1Change = (event) => {
+        setNum1(parseInt(event.target.value));
+    };
+
+    const product = selectedValue * num1;
+    const product1 = (selectedValue * 0.01)* num1;
+
 
     return (
         <div>
@@ -27,8 +43,8 @@ export default function Component() {
                                     <th>Producto</th>
                                     <th>Precio Unitario</th>
                                     <th>Cant.</th>
-                                    <th>% Ganancia</th>
                                     <th>Total</th>
+                                    <th>% Ganancia</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,16 +53,17 @@ export default function Component() {
                                         value={selectedValue}
                                         onChange={e => setSelectedValue(e.target.value)}
                                     >
-                                        <option value="13,23">Multiproposito Bovino Vitalim  40 Kg</option>
-                                        <option value="7,28">Multiproposito Cerdos Vitalim 20 Kg</option>
-                                        <option value="11,46">Multiproposito Convaca N15 35 Kg </option>
-                                        <option value="13,24">Multiproposito Convaca N15 Plus 35 Kg </option>
+                                        {options.map((opt, index) => (
+                                            <option value={opt.value} key={index}>
+                                                {opt.label}
+                                            </option>
+                                        ))}
                                     </select>
                                     </td>
                                     <td><input type="int" value={selectedValue} /></td>
-                                    <td><input type="text" /></td>
-                                    <td><input type="text" /></td>
-                                    <td><input type="text" /></td>
+                                    <td><input type="int" value={num1} onChange={handleNum1Change} /></td>
+                                    <td><input type="int" value={product} /></td>
+                                    <td><input type="int" value={product1} /></td>
                                     <td><button>+</button></td>
                                 </tr>
                             </tbody>
