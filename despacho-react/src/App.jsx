@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './public/vite.svg'
 import './App.css'
-import Component from './assets/Component'
+// import Component from './assets/Component'
+import Formulario from './assets/Formulario'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,9 +11,10 @@ function App() {
   return (
 
     <>
-      <div>
-        <img src="/losgilgares.jpeg"class="photo"></img>
-        <Component />
+      <div>        
+        <img src="/losgilgares.jpeg" class="photo"></img>
+        {/* <Component /> */}
+        <Formulario />
       </div>
     </>
 
