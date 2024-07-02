@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
+
 export default function Component() {
 
     const [selectedValue, setSelectedValue] = useState(0);
@@ -18,8 +19,7 @@ export default function Component() {
     };
 
     const product = selectedValue * num1;
-    const product1 = (selectedValue * 0.01)* num1;
-
+    const product1 = (selectedValue * 0.01) * num1;
 
     return (
         <div>
@@ -49,7 +49,7 @@ export default function Component() {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><select
+                                    <td>{<select id='producto'
                                         value={selectedValue}
                                         onChange={e => setSelectedValue(e.target.value)}
                                     >
@@ -58,13 +58,13 @@ export default function Component() {
                                                 {opt.label}
                                             </option>
                                         ))}
-                                    </select>
+                                    </select>}
                                     </td>
-                                    <td><input type="int" value={selectedValue} /></td>
-                                    <td><input type="int" value={num1} onChange={handleNum1Change} /></td>
-                                    <td><input type="int" value={product} /></td>
-                                    <td><input type="int" value={product1} /></td>
-                                    <td><button>+</button></td>
+                                    <td><input type="int" id='precio' value={selectedValue} /></td>
+                                    <td><input type="int" id='cantidad' value={num1} onChange={handleNum1Change} /></td>
+                                    <td><input type="int" id='total' value={product} /></td>
+                                    <td><input type="int" id='ganancia' value={product1} /></td>
+                                    <td><button type="button" id="add">+</button></td>
                                 </tr>
                             </tbody>
                         </table>

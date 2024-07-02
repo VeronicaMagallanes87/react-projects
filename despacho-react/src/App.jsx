@@ -4,6 +4,7 @@ import { useState } from 'react'
 import './App.css'
 // import Component from './assets/Component'
 import Formulario from './assets/Formulario'
+import Tabla from './assets/Tabla'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
         <img src="/losgilgares.jpeg" class="photo"></img>
         {/* <Component /> */}
         <Formulario />
+        <Tabla />
       </div>
     </>
 
